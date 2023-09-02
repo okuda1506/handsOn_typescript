@@ -1,9 +1,11 @@
-const bignum: bigint = (123n + 456n) * 2n;
+import { createInterface } from "readline";
 
-const result = 5n / 2n;
+const rl = createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
-// BigInt と number は一緒に使えないので下記はコンパイルエラー
-// const wrong = 100n + 50;
-
-console.log(bignum);
-console.log(result);
+rl.question('数値を入力してください: ', (line) => {
+    console.log(line + 1000);
+    rl.close();
+});
