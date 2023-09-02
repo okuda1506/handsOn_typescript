@@ -1,3 +1,3 @@
-const message: string = "Hello, World!";
+const bignum: bigint = (123n + 456n) * 2n;
 
-console.log(message);
+console.log(bignum);
