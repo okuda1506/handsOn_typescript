@@ -6,6 +6,7 @@ const rl = createInterface({
 });
 
 rl.question('数値を入力してください: ', (line) => {
-    console.log(line + 1000);
+    const num = Number(line);
+    console.log(num + 1000);
     rl.close();
 });
