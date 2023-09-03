@@ -1,13 +1,4 @@
-import { createInterface } from "readline";
+// 環境変数SECRETを取得。存在しなければ"default"を用いる
+const secret = process.env.SECRET ?? "default";
 
-const rl = createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-rl.question('名前を入力してください: ', (name) => {
-    // true⇒name, false（空）⇒"名無し"を返す
-    const displayName = name || "名無し";
-    console.log(`こんにちは、${displayName}さん`);
-    rl.close();
-});
+console.log(`secretは${secret}です`);
