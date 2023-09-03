@@ -1,8 +1,13 @@
-const input1 = "123", input2 = "";
+import { createInterface } from "readline";
 
-//!! の意味⇒!(!式)という意味 
-// !! ⇒オペランドを真偽値に変換(Boolean() と同じ)
-const input1isNotEmpty = !!input1;
-console.log(input1isNotEmpty); // true
-const input2isNotEmpty = !!input2;
-console.log(input2isNotEmpty); // false
+const rl = createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question('名前を入力してください: ', (name) => {
+    // true⇒name, false（空）⇒"名無し"を返す
+    const displayName = name || "名無し";
+    console.log(`こんにちは、${displayName}さん`);
+    rl.close();
+});
